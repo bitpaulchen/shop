@@ -26,3 +26,23 @@ sess_id varchar(32)  primary key,
 sess_data text ,
 expires int(11)
 ) charset=utf8;
+
+
+create table if not exists `it_category`(
+cat_id int unsigned primary key auto_increment,
+cat_name varchar(20) not null ,
+sort_order int not null default 100,
+parent_id int unsigned not null default 0 comment '父分类ID，顶级分类的parent_id为0'
+)charset=utf8;
+
+insert into it_category values
+	(23,'电脑办公',default,0),
+	(12,'手机数码',default,0),
+	(56,'户外运动',default,0),
+	(9,'外设产品',default,23),
+	(99,'电脑整机',default,23),
+	(66,'健身训练',default,56),
+	(57,'户外装备',default,56),
+	(13,'平板电脑',default,99),
+	(7,'笔记本',default,99),
+	(10,'跑步机',default,66);
