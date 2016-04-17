@@ -46,6 +46,8 @@ class Framework {
 			'Model' => FRAMEWORK_PATH . 'Model.class.php',
 			'Framework'=> FRAMEWORK_PATH . 'Framework.class.php',
 			'Controller' => FRAMEWORK_PATH . 'Controller.class.php',
+			'SessionDB'=>TOOL_PATH.'SessionDB.class.php',
+			'Captcha'=>TOOL_PATH.'Captcha.class.php',
 	//		'类名' => '所在地址'
 		);
 	}
@@ -100,6 +102,7 @@ class Framework {
 	private function _initPath() {
 		define('ROOT_PATH', getCWD() . '/');//根目录
 		define('FRAMEWORK_PATH', ROOT_PATH . 'framework/');
+		define('TOOL_PATH',  FRAMEWORK_PATH. 'tool/');
 
 		define('APPLICATION_PATH', ROOT_PATH . 'application/');
 		define('CONTROLLER_PATH', APPLICATION_PATH . 'controller/');

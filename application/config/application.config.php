@@ -5,7 +5,7 @@
  */
 return array(
 	'db' => array(
-		'host' => '127.0.0.1',//数据库主机地址
+		'host' => 'localhost',//数据库主机地址
 		'port' => '3306',//端口
 		'user' => 'root',//用户
 		'pass' => 'root',//密码

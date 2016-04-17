@@ -18,9 +18,10 @@ class AdminModel extends Model {
 		//利用 用字与密码做查询条件，查找记录
 		//找到即合法，没找到就非法
 		$admin_pass_md5 = md5($admin_pass);//将密码加密后再比较
+		$admin_name = $this->_db->escapeString($admin_name);
 		$sql = "SELECT * FROM `it_admin` WHERE admin_name='$admin_name' AND admin_pass='$admin_pass_md5'";
 		//根据是否查询到结果，返回真或者假
-		return (bool) $this->_db->fetchRow($sql);
+		return  $this->_db->fetchRow($sql);
 	}
 
 

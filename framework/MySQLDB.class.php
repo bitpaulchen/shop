@@ -37,7 +37,7 @@ class MySQLDB {
 			$this->_link = $link;
 		} else {
 			//失败
-			echo '数据库连接失败，请确定数据库服务器参数';
+			echo '数据库连接失败，确定数据库服务器参数';
 			die;
 //			return false;
 		}
@@ -146,5 +146,9 @@ class MySQLDB {
 		} else {
 			return false;
 		}
+	}
+
+	public function escapeString($data){
+		return mysql_real_escape_string($data,$this->_link);
 	}
 }
